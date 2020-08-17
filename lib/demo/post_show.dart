@@ -1,7 +1,4 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_app/model/post.dart';
 import '../model/post.dart';
 
 class PostShow extends StatelessWidget {
