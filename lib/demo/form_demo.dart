@@ -13,7 +13,7 @@ class ForDemo extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFieldDemo(),
+              RegisterForm(),
             ],
           ),
         ),
