@@ -34,6 +34,7 @@ class ListViewDemo extends StatelessWidget {
           // 需要单独设置上下左右的位置
           Positioned.fill(
             child: Material(
+              // 透明效果
               color: Colors.transparent,
               // 溅墨
               child: InkWell(

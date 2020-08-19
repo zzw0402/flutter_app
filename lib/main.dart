@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/demo/drawer_demo.dart';
 import 'package:flutter_app/demo/bottom_navigation_bar_demo.dart';
+import 'package:flutter_app/demo/form_demo.dart';
 import './demo/listview_demo.dart';
 import './demo/basic_demo.dart';
 import './demo/layout_demo.dart';
 import './demo/view_demo.dart';
 import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
-import './demo/post_show.dart';
+import './demo/form_demo.dart';
+import './demo/material_components.dart';
 
 void main() => runApp(App());
 
@@ -15,20 +17,24 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-         home: NavigatorDemo(),
-//         路由名字 /表示初始路由，默认显示的
-//        initialRoute: '/',
-//        routes: {
-//          '/': (context) => Home(),
-//          '/about': (context) =>  NavigatorDemo(),
-//        },
-        theme: ThemeData(
-            // 主题颜色
-            primarySwatch: Colors.yellow,
-            highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-            // 水波纹颜色
-            splashColor: Colors.white70));
+      debugShowCheckedModeBanner: false,
+//         home: NavigatorDemo(),
+      //路由名字 /表示初始路由，默认显示的
+      initialRoute: '/mdc',
+      routes: {
+        '/': (context) => NavigatorDemo(),
+        '/about': (context) => Page1(title: 'about'),
+        '/form': (context) => FormDemo(),
+        '/mdc': (context) => MaterialComponents(),
+      },
+      theme: ThemeData(
+          // 主题颜色
+          primarySwatch: Colors.yellow,
+          highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
+          // 水波纹颜色
+          splashColor: Colors.white70,
+          accentColor: Color.fromRGBO(3, 54, 255, 1.0)),
+    );
   }
 }
 

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+
+//  routes 展示内容的屏幕或者页面，就是路由
+//  navigator提供的方法去管理路由，push、pop
+//  从最上面拿掉一个东西就是pop
+// push就是新的东西到最上面
 class NavigatorDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,10 +27,10 @@ class NavigatorDemo extends StatelessWidget {
   }
 }
 
-class Page extends StatelessWidget {
+class Page1 extends StatelessWidget {
   final String title;
 
-  Page({this.title});
+  Page1({this.title});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
