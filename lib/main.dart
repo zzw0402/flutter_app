@@ -24,7 +24,7 @@ class App extends StatelessWidget {
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page1(title: 'about'),
-        '/form': (context) => ForDemo(),
+        '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
       },
       theme: ThemeData(

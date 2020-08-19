@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/demo/material_components.dart';
 
-class ForDemo extends StatelessWidget {
+class FormDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('FormDemo'),
+        elevation: 0.0,
+      ),
       body: Theme(
         data: Theme.of(context).copyWith(
           primaryColor: Colors.black,
