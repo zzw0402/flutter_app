@@ -14,11 +14,12 @@ class _ChipDemoState extends State<ChipDemo> {
 
   List<String> _selected = [];
   String _action = 'Nothing';
+  String _choice = 'Lemon';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('_widget'),
+        title: Text('ChipDemo'),
         elevation: 0.0,
       ),
       body: Container(
@@ -86,6 +87,31 @@ class _ChipDemoState extends State<ChipDemo> {
                 Divider(
                   color: Colors.grey,
                   height: 32.0,
+                  // 缩进
+//                  indent: 32.0,
+                ),
+                Container(
+                  width: double.infinity,
+                  child: Text('FilterChip: $_action'),
+                ),
+                Wrap(
+                    spacing: 8.0,
+                    // map方法迭代处理_tags的项目，并转为list
+                    children: _tags.map((tag){
+                      return ActionChip(
+                        label: Text(tag),
+                        onPressed: (){
+                          setState(() {
+                            _action = tag;
+                          });
+                        },
+                      );
+                    }).toList()
+                ),
+
+                Divider(
+                  color: Colors.grey,
+                  height: 32.0,
                   //缩进
                   indent: 32.0,
                 ),
@@ -94,42 +120,51 @@ class _ChipDemoState extends State<ChipDemo> {
                   child: Text('FilterChip: ${_selected.toString()}'),
                 ),
                 Wrap(
-                  spacing: 8.0,
-                  // map方法迭代处理_tags的项目，并转为list
-                  children: _tags.map((tag){
-                    // filterChip有选中和未选中两种状态
-                    return FilterChip(
-                      label: Text(tag),
-                      // 选中的状态，t or f, 如果_selected包含项目就是被选中的状态
-                      selected: _selected.contains(tag),
-                      onSelected: (value){
-                        setState(() {
-                          if(_selected.contains(tag)){
-                            // 在选中的项目中去掉当前的项目
-                            _selected.remove(tag);
-                          }else{
-                            _selected.add(tag);
-                          }
-                        });
-                      },
-                    );
-                  }).toList()
+                    spacing: 8.0,
+                    // map方法迭代处理_tags的项目，并转为list
+                    children: _tags.map((tag){
+                      // filterChip有选中和未选中两种状态
+                      return FilterChip(
+                        label: Text(tag),
+                        // 选中的状态，t or f, 如果_selected包含项目就是被选中的状态
+                        selected: _selected.contains(tag),
+                        onSelected: (value){
+                          setState(() {
+                            if(_selected.contains(tag)){
+                              // 在选中的项目中去掉当前的项目
+                              _selected.remove(tag);
+                            }else{
+                              _selected.add(tag);
+                            }
+                          });
+                        },
+                      );
+                    }).toList()
                 ),
+
                 Divider(
                   color: Colors.grey,
                   height: 32.0,
-                  //缩进
-                  indent: 32.0,
+                  // 缩进
+//                  indent: 32.0,
+                ),
+                Container(
+                  width: double.infinity,
+                  child: Text('ChoiceChip: $_choice'),
                 ),
                 Wrap(
                     spacing: 8.0,
                     // map方法迭代处理_tags的项目，并转为list
                     children: _tags.map((tag){
-                      return Chip(
+                      // 唯一的选择，有点像单选按钮
+                      return ChoiceChip(
                         label: Text(tag),
-                        onDeleted: (){
+                        // 被选中的项目的颜色
+                        selectedColor: Colors.black,
+                        selected: _choice == tag,
+                        onSelected: (value){
                           setState(() {
-                            _tags.remove(tag);
+                            _choice = tag;
                           });
                         },
                       );
@@ -152,6 +187,8 @@ class _ChipDemoState extends State<ChipDemo> {
             ];
             // 点击按钮成为重置选择状态
             _selected = [];
+
+            _choice = 'Lemon';
           });
         },
       ),
