@@ -11,6 +11,7 @@ import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
 import './demo/material_components.dart';
+import './demo/stream_demo.dart';
 
 void main() => runApp(App());
 
@@ -21,13 +22,14 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 //         home: NavigatorDemo(),
       //路由名字 /表示初始路由，默认显示的
-      initialRoute: '/state-management',
+      initialRoute: '/stream',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page1(title: 'about'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
         '/state-management': (context) => StateManagementDemo(),
+        '/stream': (context) => StreamDemo(),
       },
       theme: ThemeData(
           // 主题颜色
