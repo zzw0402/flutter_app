@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/demo/drawer_demo.dart';
 import 'package:flutter_app/demo/bottom_navigation_bar_demo.dart';
 import 'package:flutter_app/demo/form_demo.dart';
+import 'package:flutter_app/demo/state/state_management_demo.dart';
 import './demo/listview_demo.dart';
 import './demo/basic_demo.dart';
 import './demo/layout_demo.dart';
@@ -20,12 +21,13 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 //         home: NavigatorDemo(),
       //路由名字 /表示初始路由，默认显示的
-      initialRoute: '/mdc',
+      initialRoute: '/state-management',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page1(title: 'about'),
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MaterialComponents(),
+        '/state-management': (context) => StateManagementDemo(),
       },
       theme: ThemeData(
           // 主题颜色
