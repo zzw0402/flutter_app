@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/demo/drawer_demo.dart';
 import 'package:flutter_app/demo/bottom_navigation_bar_demo.dart';
 import 'package:flutter_app/demo/form_demo.dart';
+import 'package:flutter_app/demo/rxdart/rxdart_demo.dart';
 import 'package:flutter_app/demo/state/state_management_demo.dart';
 import './demo/listview_demo.dart';
 import './demo/basic_demo.dart';
@@ -11,7 +12,7 @@ import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
 import './demo/material_components.dart';
-import './demo/stream_demo.dart';
+import 'demo/stream/stream_demo.dart';
 
 void main() => runApp(App());
 
@@ -22,7 +23,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 //         home: NavigatorDemo(),
       //路由名字 /表示初始路由，默认显示的
-      initialRoute: '/stream',
+      initialRoute: '/rxdart',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Page1(title: 'about'),
@@ -30,6 +31,7 @@ class App extends StatelessWidget {
         '/mdc': (context) => MaterialComponents(),
         '/state-management': (context) => StateManagementDemo(),
         '/stream': (context) => StreamDemo(),
+        'rxdart': (context) => RxDartDemo(),
       },
       theme: ThemeData(
           // 主题颜色
