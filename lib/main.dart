@@ -15,6 +15,7 @@ import './demo/material_components.dart';
 import './demo/stream/stream_demo.dart';
 import './demo/bloc/bloc_demo.dart';
 import './demo/http/http_demo.dart';
+import './animation/animation_demo.dart';
 
 void main() => runApp(App());
 
@@ -36,6 +37,7 @@ class App extends StatelessWidget {
         '/rxdart': (context) => RxDartDemo(),
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
+        '/animation': (context) => AnimationDemo(),
       },
       theme: ThemeData(
           // 主题颜色
